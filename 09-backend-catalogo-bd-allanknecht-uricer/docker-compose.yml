@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  # Serviço da API Node.js
+  nodejs-api:
+    build: .
+    container_name: nodejs-api
+    ports:
+      - "5732:5732"  # Mapeia a porta 5732 do container para a porta 5732 do host
+    environment:
+      - PORT=5732
+      - NODE_ENV=${NODE_ENV}
+      - JWT_SECRET=abacate
+      - API_VERSION=${API_VERSION}
+      - CORS_ORIGIN=${CORS_ORIGIN}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+    depends_on:
+      - postgres  # Garante que o PostgreSQL seja iniciado primeiro
+    command: >
+      sh -c "
+        echo 'Aguardando PostgreSQL...' &&
+        sleep 10 &&
+        echo 'Resetando banco de dados...' &&
+        node db/reset.js &&
+        echo 'Populando banco com dados de exemplo...' &&
+        node db/seed.js || echo 'Seed já foi executado ou erro ao executar seed' &&
+        echo 'Iniciando aplicação...' &&
+        node src/server.js
+      "
+
+  # Serviço do PostgreSQL
+  postgres:
+    image: postgres:14  # Usar a imagem oficial do PostgreSQL
+    container_name: postgres-db
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5433:5432"  # Mapeia a porta do PostgreSQL para a porta 5433 do host
+    volumes:
+      - postgres-data:/var/lib/postgresql/data  # Persistir os dados do banco
+
+volumes:
+  postgres-data:

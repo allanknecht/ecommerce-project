@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - E-commerce</title>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bem-vindo à nossa loja</h1>
+            <p>Descubra as melhores ofertas e produtos exclusivos</p>
+            <a href="products.html" class="cta-button">Ver Produtos</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <section class="products-section">
+            <div class="products-header">
+                <h1>Produtos em Destaque</h1>
+            </div>
+            
+            <!-- Loading State -->
+            <div id="featured-loading" class="loading">
+                <p>Carregando produtos...</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="featured-error" class="error" style="display: none;">
+                <p id="featured-error-message">Erro ao carregar produtos</p>
+                <button onclick="carregarProdutosDestaque()">Tentar novamente</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="featured-products" class="products-grid" style="display: none;">
+                <!-- Products will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/home.js"></script>
+    <script>
+        // Renderiza componentes e atualiza login
+        renderHeader();
+        renderFooter();
+        document.addEventListener('DOMContentLoaded', function() {
+            atualizarLinkLogin();
+        });
+    </script>
+</body>
+</html>

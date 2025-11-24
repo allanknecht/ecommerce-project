@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produtos - E-commerce</title>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/products.css" />
+</head>
+<body>
+    <!-- Main Content -->
+    <main class="main-container">
+        <section class="products-section">
+            <!-- Category Title and Count -->
+            <div class="products-header">
+                <h1 id="category-title">Todos os Produtos</h1>
+                <p id="products-count">Carregando...</p>
+            </div>
+
+            <!-- Products Layout: Filters + Products -->
+            <div class="products-layout">
+                <!-- Filters Column -->
+                <div class="filters-column">
+                    <h2>Filtros</h2>
+                    
+                    <!-- Price Filters -->
+                    <div class="filter-group">
+                        <h3>Preço</h3>
+                        <div class="price-inputs">
+                            <input type="number" id="price-min" placeholder="R$ 0" min="0" step="0.01" />
+                            <input type="number" id="price-max" placeholder="R$ 9999" min="0" step="0.01" />
+                        </div>
+                    </div>
+
+                    <!-- Clear Filters Button -->
+                    <button class="clear-btn" id="clear-filters-btn">Limpar Filtros</button>
+
+                    <!-- Sort -->
+                    <div class="filter-group">
+                        <h3>Ordenar por</h3>
+                        <select id="sort-select">
+                            <option value="relevance">Relevância</option>
+                            <option value="price-asc">Preço: Menor para Maior</option>
+                            <option value="price-desc">Preço: Maior para Menor</option>
+                            <option value="name-asc">Nome: A-Z</option>
+                            <option value="name-desc">Nome: Z-A</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Products Column -->
+                <div class="products-column">
+                    <!-- Loading State -->
+                    <div id="loading" class="loading">
+                        <p>Carregando produtos...</p>
+                    </div>
+
+                    <!-- Error State -->
+                    <div id="error" class="error" style="display: none;">
+                        <p id="error-message">Erro ao carregar produtos</p>
+                        <button onclick="carregarProdutos()">Tentar novamente</button>
+                    </div>
+
+                    <!-- Products Grid -->
+                    <div id="products-container" class="products-grid" style="display: none;">
+                        <!-- Products will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/products.js"></script>
+    <script>
+        // Renderiza componentes e atualiza login
+        renderHeader();
+        renderFooter();
+        document.addEventListener('DOMContentLoaded', function() {
+            atualizarLinkLogin();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+/* Estilos globais estão em global.css */
+
+/* Main Container está em global.css */
+
+/* Header já está no components.css */
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.login-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.login-link:hover {
+    color: #007bff;
+}
+
+.cart-icon {
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+/* Main Container Title */
+.main-container h1 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+div.container {
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section {
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+section.items {
+    border-color: #333;
+}
+
+section.coupon {
+    border-color: #333;
+}
+
+section.total {
+    border-color: #333;
+}
+
+section.freight {
+    border-color: #333;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#product-items {
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+#product-items th,
+#product-items td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+#product-items th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.quantity-input {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.remove-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.remove-btn:hover {
+    background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-wrap: wrap;
+    }
+
+    .nav-menu {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 15px;
+        gap: 15px;
+        font-size: 0.9rem;
+    }
+
+    .main-container {
+        padding: 20px 10px;
+    }
+
+    .cart-section {
+        padding: 20px;
+    }
+}
+
+.freight-content,
+.coupon-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+#postal-code,
+#coupon-code {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#use-location-btn,
+#apply-coupon-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#use-location-btn:hover,
+#apply-coupon-btn:hover {
+    background-color: #0056b3;
+}
+
+#region-info,
+#freight-value {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#coupon-status {
+    width: 100%;
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    display: none;
+}
+
+.coupon-success,
+.address-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.coupon-error,
+.address-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+#address-status {
+    width: 100%;
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    display: none;
+}
+
+.total-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.total-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.total-final {
+    border-top: 2px solid #333;
+    padding-top: 15px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#checkout-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    width: 100%;
+}
+
+#checkout-btn:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 768px) {
+    .freight-content,
+    .coupon-content {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    #use-location-btn,
+    #apply-coupon-btn {
+        width: 100%;
+    }
+}
+

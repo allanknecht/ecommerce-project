@@ -1,0 +1,143 @@
+/* ============================================
+   ESTILOS GLOBAIS - APLICADOS EM TODO O SITE
+   ============================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Tipografia padrão */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+/* Links padrão */
+a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #007bff;
+}
+
+/* Botões padrão */
+button {
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+/* Inputs padrão */
+input, select, textarea {
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+}
+
+/* Container padrão */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    flex: 1;
+}
+
+/* Seções padrão */
+section {
+    background: white;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Estados de loading e erro */
+.loading {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.loading p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.error {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.error p {
+    font-size: 1.1rem;
+    color: #dc3545;
+    margin-bottom: 20px;
+}
+
+.error button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.error button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 20px 10px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+}
+

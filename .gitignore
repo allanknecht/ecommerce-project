@@ -1,0 +1,58 @@
+# Arquivos de documentação temporária
+DOCUMENTACAO_TECNICA.md
+txt.txt
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Logs
+logs/
+*.log
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.*.local
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.pid
+*.seed
+*.pid.lock
+
+# Rails
+*.sqlite3
+*.sqlite3-journal
+*.sqlite3-*
+storage/
+tmp/
+log/
+*.log
+
+# Build
+dist/
+build/
+*.tgz
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Arquivos temporários
+*.tmp
+*.temp
+

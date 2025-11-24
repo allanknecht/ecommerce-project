@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  rails-api:
+    build: .
+    container_name: rails-sacola-api
+    ports:
+      - "3002:3002"
+    volumes:
+      - .:/app
+      - bundle_cache:/usr/local/bundle
+    environment:
+      - RAILS_ENV=development
+      - PORT=3002
+      - JWT_SECRET=${JWT_SECRET:-abacate}
+      - BUNDLE_PATH=/usr/local/bundle
+    stdin_open: true
+    tty: true
+    command: sh -c "tail -f /dev/null"
+
+volumes:
+  bundle_cache:
+

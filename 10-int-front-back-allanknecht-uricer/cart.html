@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sacola - E-commerce</title>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+</head>
+<body class="cart-page">
+    <!-- Main Content -->
+    <main class="main-container">
+        <h1>Sacola de Compras</h1>
+        <div class="container">
+            <section class="items">
+                <h2>Itens</h2>
+                <table id="product-items">
+                    <thead>
+                      <tr>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                        <th>Qtd</th>
+                        <th>Subtotal</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody id="items-tbody">
+                      <!-- Itens serão inseridos aqui dinamicamente -->
+                    </tbody>
+                  </table>
+            </section>
+
+            <section class="freight">
+                <h2>Frete</h2>
+                <div class="freight-content">
+                    <input type="text" id="postal-code" name="postal-code" maxlength="9" placeholder="00000-000" />
+                    <button id="use-location-btn">Buscar Endereço</button>
+                    <div id="region-info">Endereço: <span id="region-name">-</span></div>
+                    <div id="freight-value">Frete: R$ <span id="freight-amount">0,00</span></div>
+                </div>
+            </section>
+
+            <section class="coupon">
+                <h2>Cupom</h2>
+                <div class="coupon-content">
+                    <input type="text" id="coupon-code" placeholder="Digite o código do cupom" />
+                    <button id="apply-coupon-btn">Aplicar</button>
+                    <div id="coupon-status"></div>
+                </div>
+            </section>
+
+            <section class="total">
+                <h2>Resumo</h2>
+                <div class="total-content">
+                    <div class="total-line">
+                        <span>Subtotal produtos:</span>
+                        <span>R$ <span id="subtotal-products">0,00</span></span>
+                    </div>
+                    <div class="total-line" id="discount-line" style="display: none;">
+                        <span>Desconto:</span>
+                        <span>R$ <span id="discount-amount">0,00</span></span>
+                    </div>
+                    <div class="total-line">
+                        <span>Frete:</span>
+                        <span>R$ <span id="total-freight">0,00</span></span>
+                    </div>
+                    <div class="total-line total-final">
+                        <span><strong>Total:</strong></span>
+                        <span><strong>R$ <span id="final-total">0,00</span></strong></span>
+                    </div>
+                    <button id="checkout-btn">Finalizar Compra</button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="js/components.js"></script>
+    <script src="js/sacola-api.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        // Renderiza componentes e atualiza login
+        renderHeader();
+        renderFooter();
+        document.addEventListener('DOMContentLoaded', function() {
+            atualizarLinkLogin();
+        });
+    </script>
+</body>
+</html>
